@@ -5,6 +5,7 @@ import Arithmetic from './components/calculators/Arithmetic'
 import Converter from './components/calculators/Converter'
 import BMI from './components/calculators/BMI'
 import Physics from './components/calculators/Physics'
+import Finance from './components/calculators/Finance'
 
 function App() {
   const [view, setView] = useState('menu')
@@ -15,6 +16,7 @@ function App() {
       case 'converter': return <Converter onBack={() => setView('menu')} />
       case 'bmi': return <BMI onBack={() => setView('menu')} />
       case 'physics': return <Physics onBack={() => setView('menu')} />
+      case 'finance': return <Finance onBack={() => setView('menu')} />
       default: return <Menu onSelect={setView} />
     }
   }

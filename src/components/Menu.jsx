@@ -6,6 +6,7 @@ const Menu = ({ onSelect }) => {
     { id: 'converter', title: 'Converter', icon: '🔄', desc: 'Length, Mass, Temp, & More' },
     { id: 'bmi', title: 'BMI Calculator', icon: '⚖️', desc: 'Body Mass Index & Analysis' },
     { id: 'physics', title: 'Physics', icon: '⚛️', desc: 'Velocity, Force, Displacement' },
+    { id: 'finance', title: 'Finance', icon: '📈', desc: 'Investment Growth & Interest' },
   ]
 
   return (
