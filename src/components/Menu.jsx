@@ -7,6 +7,7 @@ const Menu = ({ onSelect }) => {
     { id: 'bmi', title: 'BMI Calculator', icon: '⚖️', desc: 'Body Mass Index & Analysis' },
     { id: 'physics', title: 'Physics', icon: '⚛️', desc: 'Velocity, Force, Displacement' },
     { id: 'finance', title: 'Finance', icon: '📈', desc: 'Investment Growth & Interest' },
+    { id: 'math', title: 'Mathematics', icon: '📐', desc: 'Algebra, Graphing & Theorms' },
   ]
 
   return (
