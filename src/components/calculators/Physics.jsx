@@ -113,18 +113,20 @@ const Physics = ({ onBack }) => {
           {formulas[formula].eqn}
         </div>
 
-        {formulas[formula].fields.map(field => (
-          <div className="input-group" key={field.name}>
-            <label className="input-label">{field.label}</label>
-            <input 
-              type="number" 
-              className="input-field"
-              value={inputs[field.name] || ''}
-              onChange={(e) => handleInputChange(field.name, e.target.value)}
-              placeholder="0"
-            />
-          </div>
-        ))}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
+          {formulas[formula].fields.map(field => (
+            <div className="input-group" key={field.name} style={{ marginBottom: 0 }}>
+              <label className="input-label">{field.label}</label>
+              <input 
+                type="number" 
+                className="input-field"
+                value={inputs[field.name] || ''}
+                onChange={(e) => handleInputChange(field.name, e.target.value)}
+                placeholder="0"
+              />
+            </div>
+          ))}
+        </div>
 
         <button className="action-btn" onClick={handleCalculate}>Calculate</button>
 
