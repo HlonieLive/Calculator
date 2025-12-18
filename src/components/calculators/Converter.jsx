@@ -11,7 +11,8 @@ const Converter = ({ onBack }) => {
     length: { units: ['meter', 'kilometer', 'centimeter', 'millimeter', 'inch', 'foot', 'yard', 'mile'] },
     mass: { units: ['kilogram', 'gram', 'milligram', 'pound', 'ounce'] },
     temperature: { units: ['celsius', 'fahrenheit', 'kelvin'] },
-    degrees: { units: ['degree', 'radian', 'gradian'] }
+    degrees: { units: ['degree', 'radian', 'gradian'] },
+    currency: { units: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'ZAR'] }
   }
 
   // Initialize units when category changes
@@ -42,6 +43,8 @@ const Converter = ({ onBack }) => {
       res = convertTemp(val, fromUnit, toUnit)
     } else if (category === 'degrees') {
       res = convertAngles(val, fromUnit, toUnit)
+    } else if (category === 'currency') {
+      res = convertCurrency(val, fromUnit, toUnit)
     }
     setResult(res)
   }
@@ -85,6 +88,22 @@ const Converter = ({ onBack }) => {
     if (to === 'radian') return deg * (Math.PI/180)
     if (to === 'gradian') return deg / 0.9
     return deg
+  }
+
+  const convertCurrency = (val, from, to) => {
+    // Approximate rates relative to USD (Base: 1 USD)
+    // As of Dec 2024 (Estimation)
+    const rates = {
+      USD: 1,
+      EUR: 0.91,
+      GBP: 0.76,
+      JPY: 142.5,
+      CAD: 1.35,
+      AUD: 1.50,
+      ZAR: 18.50
+    }
+    const inUSD = val / rates[from]
+    return inUSD * rates[to]
   }
 
   return (
