@@ -1,3 +1,8 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Calculator {
 
     // Method to add two numbers
@@ -25,9 +30,48 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        System.out.println("Addition: " + calculator.add(5, 3));
-        System.out.println("Subtraction: " + calculator.subtract(5, 3));
-        System.out.println("Multiplication: " + calculator.multiply(5, 3));
-        System.out.println("Division: " + calculator.divide(5, 3));
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Choose method of Calculation: addition, subtraction, multiplication, division or 'q' to exit.");
+            String choice = scanner.nextLine().toLowerCase(Locale.ROOT);
+
+            if (choice.equals("addition")) {
+                System.out.println("Enter 1st number: ");
+                int a = scanner.nextInt();
+                System.out.println("Enter 2nd number: ");
+                int b = scanner.nextInt();
+                System.out.println("The Sum is: " + calculator.add(a, b) + "\n");
+            }
+            if (choice.equals("subtraction")) {
+                System.out.println("Enter 1st number: ");
+                int a = scanner.nextInt();
+                System.out.println("Enter 2nd number: ");
+                int b = scanner.nextInt();
+                System.out.println("The Difference is: " + calculator.subtract(a, b) + "\n");
+            }
+            if (choice.equals("multiplication")) {
+                System.out.println("Enter 1st number: ");
+                int a = scanner.nextInt();
+                System.out.println("Enter 2nd number: ");
+                int b = scanner.nextInt();
+                System.out.println("The Product is: " + calculator.multiply(a, b) + "\n");
+            }
+            if (choice.equals("division")) {
+                System.out.println("Enter 1st number: ");
+                int a = scanner.nextInt();
+                System.out.println("Enter 2nd number: ");
+                int b = scanner.nextInt();
+                if (b != 0) {
+                    System.out.println("The Division is: " + calculator.multiply(a, b) + "\n");
+                } else System.out.println("Cannot divide by zero...");
+            }
+            if (choice.equals("q")) {
+                break;
+            }
+            scanner.nextLine();
+
+        }
+        scanner.close();
     }
+
 }
