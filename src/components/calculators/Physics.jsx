@@ -77,7 +77,7 @@ const Physics = ({ onBack }) => {
     <div className="calculator-layout animate-fade-in">
       <div className="calc-header">
         <button className="back-btn" onClick={onBack}>←</button>
-        <span className="calc-title">Physics</span>
+        <span className="calc-title">Physics Hub</span>
         <div style={{width: 48}}></div>
       </div>
 

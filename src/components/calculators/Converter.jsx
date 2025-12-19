@@ -12,7 +12,7 @@ const Converter = ({ onBack }) => {
     mass: { units: ['kilogram', 'gram', 'milligram', 'pound', 'ounce'] },
     temperature: { units: ['celsius', 'fahrenheit', 'kelvin'] },
     degrees: { units: ['degree', 'radian', 'gradian'] },
-    currency: { units: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'ZAR'] }
+    currency: { units: ['USD', 'ZAR', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD'] }
   }
 
   // Initialize units when category changes

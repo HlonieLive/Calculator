@@ -3,7 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const Finance = ({ onBack }) => {
   const [mode, setMode] = useState('investment') // 'investment', 'loan', 'salary'
-  const [currency, setCurrency] = useState('$')
+  const [currency, setCurrency] = useState('R')
   
   // Currencies
   const currencies = [
